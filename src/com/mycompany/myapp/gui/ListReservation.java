@@ -55,12 +55,12 @@ public class ListReservation extends BaseForm{
                           m.setTextLine2("Email :"+String.valueOf(fi.getEmail_resv()));
                           m.setTextLine3(" Date Debut: "+String.valueOf(fi.getDate_resv()));
                            m.setTextLine4(" Date Fin: "+String.valueOf(fi.getEnd_resv()));
-                      /*   
+                        
                             m.addLongPressListener(new ActionListener() {
                                             @Override
             public void actionPerformed(ActionEvent evt) {              
                 if (Dialog.show("Confirmation", "Voulez vous Supprimer cette table ?", "Supprimer", "Annuler")) {
-                        if( ServiceReservation.getInstance().deleteTable(fi)){
+                        if( ServiceReservation.getInstance().deleteReservation(fi)){
                             {
                                    Dialog.show("Success","supprimer",new Command("OK"));
                                    new NewsfeedForm(res).show();
@@ -74,9 +74,9 @@ public class ListReservation extends BaseForm{
                                    new ModifierTable(res,current,fi).show();
                                        }
 
-                }
+                }*/
             }
-        });*/
+        });
 
                             add(m);
                              }

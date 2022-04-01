@@ -9,6 +9,8 @@ import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
+import com.codename1.io.NetworkManager;
+import com.codename1.ui.events.ActionListener;
 import com.mycompany.myapp.entities.Reservation;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
@@ -97,4 +99,17 @@ public class ServiceReservation {
         return reservation;
     }
 
+    public boolean deleteReservation(Reservation fi) {
+        String url = Statics.BASE_URL + "supprimerResv/" + fi.getId_resv();
+               req.setUrl(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+    }
 }
