@@ -68,11 +68,7 @@ public class ListTable  extends BaseForm {
                     ArrayList <Table> paniers = new ArrayList();
                         ServiceTable sa =new ServiceTable();
                     paniers=sa.getAllTable();
-                     Button btnadd = new Button("Ajouter");
-                     add(btnadd);
-                     btnadd.addActionListener((evt) -> {
-                         new AjouterTable(res).show();
-                    });
+                    
                        
                              for (Table fi : paniers) {
                             MultiButton m = new MultiButton();
@@ -82,7 +78,8 @@ public class ListTable  extends BaseForm {
                          
                             m.addLongPressListener(new ActionListener() {
                                             @Override
-            public void actionPerformed(ActionEvent evt) {              
+            public void actionPerformed(ActionEvent evt) {
+               
                 if (Dialog.show("Confirmation", "Voulez vous Supprimer cette table ?", "Supprimer", "Annuler")) {
                         if( ServiceTable.getInstance().deleteTable(fi)){
                             {
@@ -90,7 +87,8 @@ public class ListTable  extends BaseForm {
                                    new NewsfeedForm(res).show();
                             }
                    
-                } 
+                 
+            }
             }
                 /*else
                 {
@@ -143,11 +141,11 @@ public class ListTable  extends BaseForm {
       getToolbar().addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
        getToolbar().addMaterialCommandToSideMenu("Evenement", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
     
-     getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new AjouterEmplacement(res));
+  getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res));
     
-      getToolbar().addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new AjouterTable(res).show());
-     getToolbar().addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ReservationForm(res).show());
-     //getToolbar().addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show())
+      getToolbar().addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new ListTable(res).show());
+     getToolbar().addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ListReservation(res).show());
+      //getToolbar().addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show())
     
     }
 }

@@ -6,6 +6,7 @@
 package com.mycompany.myapp.gui;
 
 import com.codename1.components.ImageViewer;
+import com.codename1.components.InfiniteProgress;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
 import com.codename1.components.ToastBar;
@@ -35,6 +36,7 @@ import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Reservation;
+import com.mycompany.myapp.services.ServiceReservation;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -118,7 +120,6 @@ Form current;
         
         TextField tfEmail = new TextField("", "Email");
         TextField tfphone = new TextField("", "Numéro Telephone");
-        TextField tfVue = new TextField("", "Vue ");
         
         tfEmail.getSelectedStyle().setFgColor(0x2A2A2A);
         
@@ -127,11 +128,12 @@ Form current;
         
         Button btnValider = new Button("RESERVER");
         
-        addAll(tfEmail,tfphone,tfVue ,dateD, dateEnd );
+        addAll(tfEmail,tfphone ,dateD, dateEnd );
         addAll(btnValider);
       
      
       
+            
 
 
     }

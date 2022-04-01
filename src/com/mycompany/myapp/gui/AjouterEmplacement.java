@@ -43,7 +43,7 @@ import java.util.Date;
  */
 public class AjouterEmplacement extends BaseForm {
     Form current;
-    public AjouterEmplacement(Resources res) {
+    public AjouterEmplacement(Resources res,Form previous,Emplacement fi) {
         super("Newsfeed", BoxLayout.y());
         Toolbar tb = new Toolbar(true);
         current=this;
