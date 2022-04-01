@@ -89,7 +89,7 @@ public class BaseForm extends Form {
         tb.addMaterialCommandToSideMenu("Evenement", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
         tb.addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new AjouterEmplacement(res).show());
         tb.addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new ListTable(res).show());
-        tb.addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ReservationForm(res).show());
+        tb.addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ListReservation(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
     }
 }
