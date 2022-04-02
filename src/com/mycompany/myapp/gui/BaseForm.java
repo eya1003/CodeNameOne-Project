@@ -91,7 +91,6 @@ public class BaseForm extends Form {
         tb.addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new ListTable(res).show());
         tb.addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ListReservation(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
-        tb.addMaterialCommandToSideMenu("Reservation form", FontImage.MATERIAL_UPDATE, e -> new ReservationForm(res).show());
 
     
     }
