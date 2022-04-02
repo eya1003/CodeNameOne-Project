@@ -79,7 +79,9 @@ public class ListTable  extends BaseForm {
                             m.addLongPressListener(new ActionListener() {
                                             @Override
             public void actionPerformed(ActionEvent evt) {
-               
+               /* if (Dialog.show("Confirmation", "Voulez vous Ajouter une TABLE?", "Oui", "Non")) {
+                                   new AjouterTable(res,current,fi).show();
+                                       }*/
                 if (Dialog.show("Confirmation", "Voulez vous Supprimer cette table ?", "Supprimer", "Annuler")) {
                         if( ServiceTable.getInstance().deleteTable(fi)){
                             {

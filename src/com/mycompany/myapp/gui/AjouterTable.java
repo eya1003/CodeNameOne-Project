@@ -39,6 +39,8 @@ import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Emplacement;
 import com.mycompany.myapp.entities.Table;
 import com.mycompany.myapp.services.ServiceEmplacement;
+import com.mycompany.myapp.services.ServiceTable;
+import static java.lang.Integer.parseInt;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -48,7 +50,7 @@ import java.util.Date;
  */
 public class AjouterTable extends BaseForm{
     Form current;
-    public AjouterTable(Resources res) {
+    public AjouterTable(Resources res,Form previous,Table fi) {
         super("Newsfeed", BoxLayout.y());
         Toolbar tb = new Toolbar(true);
         current=this;
@@ -144,9 +146,7 @@ public class AjouterTable extends BaseForm{
         });
 
     
-       TextField vue = new TextField("", "entrer Vue!!");
-        vue.setUIID("TextFieldBlack");
-        addStringValue("Objet",vue);
+     
         
         TextField nbChaises = new TextField("", "entrer nombre des chaises!!");
         nbChaises.setUIID("TextFieldBlack");
@@ -159,7 +159,7 @@ public class AjouterTable extends BaseForm{
         Button btnAjouter = new Button("Ajouter");
         addStringValue("", btnAjouter);
      
-     /* btnAjouter.addActionListener((e) -> {
+      btnAjouter.addActionListener((e) -> {
             try {
                 
                 if(stock.getText().equals("") || nbChaises.getText().equals("")) {
@@ -173,15 +173,18 @@ public class AjouterTable extends BaseForm{
                  //   SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
                     
                     //njibo iduser men session (current user)
-                    Table r = new Table(String.valueOf(vue.getText()
-                                  ).toString(),
-                            Int.valueOf(nbChaises.getText()),
-                            String.valueOf(stock.getText())
-                );
+                    Table r = new Table(
+                   
+                            Integer.valueOf(nbChaises.getText()
+                                  ),
+                            Integer.valueOf(stock.getText()
+                                  )
+                    );
+                
                     
                     System.out.println("data  reclamation == "+r);
                     
-                    ServiceEmplacement.getInstance().newEmp(r);
+                    ServiceTable.getInstance().ajouterReclamation(r);
                     
                     iDialog.dispose(); //na7io loading ba3d ma3mlna ajout
                     
@@ -198,7 +201,7 @@ public class AjouterTable extends BaseForm{
             
             
             
-      });*/
+      });
             
       
 

@@ -4,8 +4,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/eyaam/Desktop/Esprit/3A44/semestre2/mobile/ProjetMobile/src/com/mycompany/myapp/gui/ListTable.java</file>
-            <file>file:/C:/Users/eyaam/Desktop/Esprit/3A44/semestre2/mobile/ProjetMobile/src/com/mycompany/myapp/entities/Reservation.java</file>
+            <file>file:/C:/Users/eyaam/Documents/GitHub/CodeNameOne-Project/src/com/mycompany/myapp/gui/ListEmpForm.java</file>
+            <file>file:/C:/Users/eyaam/Documents/GitHub/CodeNameOne-Project/src/com/mycompany/myapp/gui/ListTable.java</file>
+            <file>file:/C:/Users/eyaam/Documents/GitHub/CodeNameOne-Project/src/com/mycompany/myapp/gui/ListReservation.java</file>
+            <file>file:/C:/Users/eyaam/Documents/GitHub/CodeNameOne-Project/src/com/mycompany/myapp/gui/AjouterTable.java</file>
+            <file>file:/C:/Users/eyaam/Documents/GitHub/CodeNameOne-Project/src/com/mycompany/myapp/gui/AjouterEmplacement.java</file>
         </group>
     </open-files>
 </project-private>

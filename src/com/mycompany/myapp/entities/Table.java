@@ -5,6 +5,8 @@
  */
 package com.mycompany.myapp.entities;
 
+import com.codename1.ui.TextField;
+
 /**
  *
  * @author eyaam
@@ -22,6 +24,13 @@ public class Table {
         this.nb_chaise_tab = nb_chaise_tab;
         this.emp = emp;
     }
+      public Table( String emp, int nb_chaise_tab,int stock_tab) {
+        this.emp = emp;
+        this.nb_chaise_tab = nb_chaise_tab;
+          this.stock_tab = stock_tab;
+        
+        
+    }
 
     public Table(int stock_tab, int nb_chaise_tab, String emp) {
         this.stock_tab = stock_tab;
@@ -29,6 +38,11 @@ public class Table {
         this.emp = emp;
     }
 
+    public Table(int stock_tab, int nb_chaise_tab) {
+        this.stock_tab = stock_tab;
+        this.nb_chaise_tab = nb_chaise_tab;
+    }
+  
     public int getId_tab() {
         return id_tab;
     }

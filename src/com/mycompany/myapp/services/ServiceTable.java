@@ -145,4 +145,23 @@ public class ServiceTable {
         return resultOK;
     }
 
+    
+    //ajout
+     public void ajouterReclamation(Table reclamation ){
+     
+     
+       String url =Statics.BASE_URL+"addReclamationJson/new?nb_chaise_tab=?"+reclamation.getNb_chaise_tab()+"&emp="+101+"&stock_tab="+reclamation.getStock_tab();
+       
+       
+       req.setUrl(url);
+       req.addResponseListener((e)  ->  {
+       
+       String str = new String (req.getResponseData()); //Response json hethi il ritha fi navigateur kblia 
+       System.out.println("data =="+str);
+       
+       });
+       
+         NetworkManager.getInstance().addToQueueAndWait(req); //execution ta3 request sinon yet3ada chy dima nal9awhaa
+         
+}
 }

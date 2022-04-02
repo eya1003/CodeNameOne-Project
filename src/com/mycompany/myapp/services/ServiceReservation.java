@@ -114,7 +114,7 @@ public class ServiceReservation {
     }
     
     //ajout 
-    /*
+    
     public void ajoutReservation(Reservation a) {
         
         String url =Statics.BASE_URL+"addResvJSON?phone_resv="+a.getPhone_resv()+"&Email_resv="+a.getEmail_resv(); 
@@ -128,5 +128,5 @@ public class ServiceReservation {
         
         NetworkManager.getInstance().addToQueueAndWait(req);//execution ta3 request sinon yet3ada chy dima nal9awha
         
-    }*/
+    }
 }

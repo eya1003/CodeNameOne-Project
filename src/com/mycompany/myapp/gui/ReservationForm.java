@@ -46,7 +46,7 @@ import java.util.Date;
  */
 public class ReservationForm extends BaseForm{
 Form current;
-    public ReservationForm(Resources res) {
+    public ReservationForm(Resources res,Form previous,Reservation fi){
         super("ReservationForm", BoxLayout.y());
         current=this;
         Toolbar tb = new Toolbar(true);
@@ -123,15 +123,52 @@ Form current;
         
         tfEmail.getSelectedStyle().setFgColor(0x2A2A2A);
         
-        PickerComponent dateD = PickerComponent.createDateTime(new Date()).label("Date Debut");
-        PickerComponent dateEnd = PickerComponent.createDateTime(new Date()).label("Date Fin");
+      
         
         Button btnValider = new Button("RESERVER");
         
-        addAll(tfEmail,tfphone ,dateD, dateEnd );
+        addAll(tfEmail,tfphone  );
         addAll(btnValider);
       
-     
+      btnValider.addActionListener((e) -> {
+            try {
+                
+                if(tfEmail.getText().equals("") || tfphone.getText().equals("")) {
+                    Dialog.show("Veuillez vérifier les données","","Annuler", "OK");
+                }
+                
+                else {
+                    InfiniteProgress ip = new InfiniteProgress();; //Loading  after insert data
+                    final Dialog iDialog = ip.showInfiniteBlocking();
+                    
+                     Reservation r = new Reservation(Integer.valueOf(tfphone.getText()
+                                  ),
+                                  String.valueOf(tfEmail.getText()).toString()
+                     );
+                    
+                    System.out.println("data  reclamation == "+r);
+           
+                     //appelle methode ajouterReclamation mt3 service Reclamation bch nzido données ta3na fi base 
+                    ServiceReservation.getInstance().ajoutReservation(r);
+                    
+                    iDialog.dispose(); //na7io loading ba3d ma3mlna ajout
+                    
+                    //ba3d ajout net3adaw lel ListREclamationForm
+                    new ListReservation(res).show();
+                    
+                    
+                    refreshTheme();//Actualisation
+                }
+                
+            }catch(Exception ex ) {
+                ex.printStackTrace();
+            }
+            
+            
+            
+            
+      });
+            
       
             
 

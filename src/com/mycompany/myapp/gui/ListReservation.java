@@ -53,12 +53,18 @@ public class ListReservation extends BaseForm{
                             
                            m.setTextLine1(" Phone: "+String.valueOf(fi.getPhone_resv()));
                           m.setTextLine2("Email :"+String.valueOf(fi.getEmail_resv()));
-                          m.setTextLine3(" Date Debut: "+String.valueOf(fi.getDate_resv()));
-                           m.setTextLine4(" Date Fin: "+String.valueOf(fi.getEnd_resv()));
+                          m.setTextLine3(" Date : "+String.valueOf(fi.getDate_resv()));
                         
                             m.addLongPressListener(new ActionListener() {
                                             @Override
-            public void actionPerformed(ActionEvent evt) {              
+            public void actionPerformed(ActionEvent evt) {    
+                
+                  if (Dialog.show("Confirmation", "Voulez vous Ajouter une RESERVATION c?", "Oui", "Non")) {
+                                   new ReservationForm(res,current,fi).show();
+                                       }
+
+                else
+                {
                 if (Dialog.show("Confirmation", "Voulez vous Supprimer cette table ?", "Supprimer", "Annuler")) {
                         if( ServiceReservation.getInstance().deleteReservation(fi)){
                             {
@@ -67,7 +73,7 @@ public class ListReservation extends BaseForm{
                             }
                    
                 } 
-            }
+            }}
                 /*else
                 {
                       if (Dialog.show("Confirmation", "Voulez vous Modifier cette article?", "Oui", "Non")) {
@@ -102,11 +108,9 @@ public class ListReservation extends BaseForm{
             String line1 = mb.getTextLine1();
             String line2 = mb.getTextLine2();
             String line3 = mb.getTextLine3();
-            String line4 = mb.getTextLine4();
             boolean show = line1 != null && line1.toLowerCase().indexOf(text) > -1 ||
             line2 != null && line2.toLowerCase().indexOf(text) > -1 ||
-            line3 != null && line3.toLowerCase().indexOf(text) > -1 ||
-            line4 != null && line4.toLowerCase().indexOf(text) > -1;
+            line3 != null && line3.toLowerCase().indexOf(text) > -1 ;
             mb.setHidden(!show);
             mb.setVisible(show);
         }
