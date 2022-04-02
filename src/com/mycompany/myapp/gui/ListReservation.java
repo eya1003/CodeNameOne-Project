@@ -59,28 +59,27 @@ public class ListReservation extends BaseForm{
                                             @Override
             public void actionPerformed(ActionEvent evt) {    
                 
-                  if (Dialog.show("Confirmation", "Voulez vous Ajouter une RESERVATION c?", "Oui", "Non")) {
+                  if (Dialog.show("Confirmation", "Voulez vous Ajouter une RESERVATION?", "Oui", "Non")) {
                                    new ReservationForm(res,current,fi).show();
                                        }
+                  else {
+                     if (Dialog.show("Confirmation", "Voulez vous Modifier cette RESERVATION?", "Oui", "Non")) {
+                                   new ModifierReservation(res,current,fi).show();
+                                       }
 
-                else
-                {
-                if (Dialog.show("Confirmation", "Voulez vous Supprimer cette table ?", "Supprimer", "Annuler")) {
+                     else {
+                          if (Dialog.show("Confirmation", "Voulez vous Supprimer cette RESERVATION ?", "Supprimer", "Annuler")) {
                         if( ServiceReservation.getInstance().deleteReservation(fi)){
                             {
                                    Dialog.show("Success","supprimer",new Command("OK"));
-                                   new NewsfeedForm(res).show();
+                                   new ListReservation(res).show();
                             }
                    
-                } 
-            }}
-                /*else
-                {
-                      if (Dialog.show("Confirmation", "Voulez vous Modifier cette article?", "Oui", "Non")) {
-                                   new ModifierTable(res,current,fi).show();
-                                       }
-
-                }*/
+                }
+                      
+                          }
+                }
+            }
             }
         });
 

@@ -189,7 +189,7 @@ public class AjouterTable extends BaseForm{
                     iDialog.dispose(); //na7io loading ba3d ma3mlna ajout
                     
                     //ba3d ajout net3adaw lel ListREclamationForm
-                   new ListEmpForm(res).show();
+                   new ListTable(res).show();
                     refreshTheme();
                             
                 }

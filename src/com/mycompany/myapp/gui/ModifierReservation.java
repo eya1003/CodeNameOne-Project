@@ -5,14 +5,11 @@
  */
 package com.mycompany.myapp.gui;
 
-import com.codename1.ui.Form;
-import com.codename1.ui.util.Resources;
-import com.mycompany.myapp.entities.Emplacement;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.ui.Button;
-import com.codename1.ui.CheckBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Component;
+import static com.codename1.ui.Component.BOTTOM;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
 import com.codename1.ui.Form;
@@ -27,16 +24,16 @@ import com.codename1.ui.layouts.GridLayout;
 import com.codename1.ui.layouts.LayeredLayout;
 import com.codename1.ui.plaf.Style;
 import com.codename1.ui.util.Resources;
-import com.mycompany.myapp.services.ServiceEmplacement;
+import com.mycompany.myapp.entities.Reservation;
+import com.mycompany.myapp.services.ServiceReservation;
 
 /**
  *
  * @author eyaam
  */
-public class ModifierEmp extends BaseForm {
-    
-       public ModifierEmp(Resources res,Form previous,Emplacement fi) {
-        super("Modifier Emplacement ", BoxLayout.y());
+public class ModifierReservation extends BaseForm {
+    public ModifierReservation(Resources res,Form previous,Reservation fi) {
+        super("Modifier Reservation ", BoxLayout.y());
         Toolbar tb = new Toolbar(true);
         setToolbar(tb);
         getTitleArea().setUIID("Container");
@@ -70,15 +67,15 @@ public class ModifierEmp extends BaseForm {
                 )
         ));
 
-        Label type = new Label(String.valueOf(fi.getType_emplacement()));
+        Label phone = new Label(String.valueOf(fi.getPhone_resv()));
        // TextField type = new TextField("", "entrer Vue!!");
-        type.setUIID("TextFieldBlack");
-       addStringValue("type_emplacement", type);
+        phone.setUIID("TextFieldBlack");
+       addStringValue("phone", phone);
 
        // Label description = new Label(String.valueOf(fi.getDescription()));
-       TextField description = new TextField("", "entrer description");
-        description.setUIID("TextFieldBlack");
-        addStringValue("Description", description);
+       TextField email = new TextField("", "entrer email");
+        email.setUIID("TextFieldBlack");
+        addStringValue("email", email);
 
        
        
@@ -87,13 +84,13 @@ public class ModifierEmp extends BaseForm {
                
         Button Edit = new Button("Edit");
         Edit.addActionListener((evt) -> {
-            ServiceEmplacement sp = new ServiceEmplacement();
+            ServiceReservation sp = new ServiceReservation();
             
-            fi.setType_emplacement(String.valueOf(type.getText()));
-            fi.setDescription(String.valueOf(description.getText()));
-            sp.editPanier(fi);
+            fi.setPhone_resv(Integer.valueOf(phone.getText()));
+            fi.setEmail_resv(String.valueOf(email.getText()));
+            sp.editReservation(fi);
             Dialog.show("Success","Emplacement modifier avec success",new Command("OK"));
-            new ListEmpForm(res).show();
+            new ListReservation(res).show();
            
         });
         addStringValue("", FlowLayout.encloseRightMiddle(Edit));
@@ -106,3 +103,4 @@ public class ModifierEmp extends BaseForm {
         add(createLineSeparator(0xeeeeee));
  }
 }
+

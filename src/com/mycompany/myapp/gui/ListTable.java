@@ -86,7 +86,7 @@ public class ListTable  extends BaseForm {
                         if( ServiceTable.getInstance().deleteTable(fi)){
                             {
                                    Dialog.show("Success","supprimer",new Command("OK"));
-                                   new NewsfeedForm(res).show();
+                                   new ListTable(res).show();
                             }
                    
                  

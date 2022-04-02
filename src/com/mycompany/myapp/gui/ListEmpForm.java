@@ -69,7 +69,7 @@ public class ListEmpForm extends BaseForm{
                         if( ServiceEmplacement.getInstance().deletePanier(fi)){
                             {
                                    Dialog.show("Success","supprimer",new Command("OK"));
-                                   new NewsfeedForm(res).show();
+                                   new ListEmpForm(res).show();
                             }
                    
                 }

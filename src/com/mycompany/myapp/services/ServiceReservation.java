@@ -129,4 +129,20 @@ public class ServiceReservation {
         NetworkManager.getInstance().addToQueueAndWait(req);//execution ta3 request sinon yet3ada chy dima nal9awha
         
     }
+    
+    public boolean editReservation(Reservation u) {
+        String url = Statics.BASE_URL + "reserupdate/"+u.getId_resv()+
+                "?phone_resv="+u.getPhone_resv()+"&Email_resv="+u.getEmail_resv();
+               req.setUrl(url);
+               System.out.println(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+    }
 }
