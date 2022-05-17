@@ -124,7 +124,7 @@ public class ListReservation extends BaseForm{
       getToolbar().addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
        getToolbar().addMaterialCommandToSideMenu("Evenement", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
     
-     getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res));
+     getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res).show());
     
       getToolbar().addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new ListTable(res).show());
      getToolbar().addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ListReservation(res).show());

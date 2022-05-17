@@ -43,11 +43,11 @@ public class ListEmpForm extends BaseForm{
                     ArrayList <Emplacement> paniers = new ArrayList();
                         ServiceEmplacement sa =new ServiceEmplacement();
                     paniers=sa.getAllEmplacement();
-                     /*   Button btnadd = new Button("Ajouter");
-                     add(btnadd);
-                     btnadd.addActionListener((evt) -> {
-                         new AjouterEmplacement(res).show();
-                    });*/
+                       // Button btnadd = new Button("Ajouter");
+//                     add(btnadd);
+//                     btnadd.addActionListener((evt) -> {
+//                         new AjouterEmplacement(res);
+//                    });
                              for (Emplacement fi : paniers) {
                             MultiButton m = new MultiButton();
                             m.setTextLine1("Vue : "+String.valueOf(fi.getType_emplacement()));
@@ -119,7 +119,7 @@ public class ListEmpForm extends BaseForm{
       //  getToolbar().addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_SHOPPING_CART, e -> new MonPanier(res).show());
       getToolbar().addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
        getToolbar().addMaterialCommandToSideMenu("Evenement", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
-    getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res));
+    getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res).show());
     
       getToolbar().addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new ListTable(res).show());
      getToolbar().addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ListReservation(res).show());

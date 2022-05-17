@@ -150,7 +150,7 @@ public class ServiceTable {
      public void ajouterReclamation(Table reclamation ){
      
      
-       String url =Statics.BASE_URL+"addReclamationJson/new?nb_chaise_tab=?"+reclamation.getNb_chaise_tab()+"&emp="+101+"&stock_tab="+reclamation.getStock_tab();
+       String url =Statics.BASE_URL+"addReclamationJson/new?nb_chaise_tab=?"+reclamation.getNb_chaise_tab()+"&emp="+null+"&stock_tab="+reclamation.getStock_tab();
        
        
        req.setUrl(url);

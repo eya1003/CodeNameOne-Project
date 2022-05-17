@@ -79,9 +79,9 @@ public class ListTable  extends BaseForm {
                             m.addLongPressListener(new ActionListener() {
                                             @Override
             public void actionPerformed(ActionEvent evt) {
-               /* if (Dialog.show("Confirmation", "Voulez vous Ajouter une TABLE?", "Oui", "Non")) {
+              if (Dialog.show("Confirmation", "Voulez vous Ajouter une TABLE?", "Oui", "Non")) {
                                    new AjouterTable(res,current,fi).show();
-                                       }*/
+                                       }
                 if (Dialog.show("Confirmation", "Voulez vous Supprimer cette table ?", "Supprimer", "Annuler")) {
                         if( ServiceTable.getInstance().deleteTable(fi)){
                             {
@@ -143,7 +143,7 @@ public class ListTable  extends BaseForm {
       getToolbar().addMaterialCommandToSideMenu("Panier", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
        getToolbar().addMaterialCommandToSideMenu("Evenement", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
     
-  getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res));
+  getToolbar().addMaterialCommandToSideMenu("Emplacement", FontImage.MATERIAL_UPDATE, e -> new ListEmpForm(res).show());
     
       getToolbar().addMaterialCommandToSideMenu("Table", FontImage.MATERIAL_UPDATE, e -> new ListTable(res).show());
      getToolbar().addMaterialCommandToSideMenu("Reservation", FontImage.MATERIAL_UPDATE, e -> new ListReservation(res).show());
