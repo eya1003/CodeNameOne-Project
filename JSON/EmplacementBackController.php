@@ -49,7 +49,7 @@ class EmplacementBackController extends AbstractController
     }
 
     /**
-     * @Route("/addEmpJSON", name="Emplacement")
+     * @Route("/mobile/addEmpJSON", name="Emplacement")
      */
     public function newEmp(Request $request,NormalizerInterface  $normalizer)
     {
@@ -65,7 +65,7 @@ class EmplacementBackController extends AbstractController
 
 
     /**
-     * @Route("/api/afficheEmp", name="api_afficheEmp")
+     * @Route("/mobile/api/afficheEmp", name="api_afficheEmp")
      */
     public function AfficheApi(EmplacementRepository $repo,NormalizerInterface $Normalizer) {
         $agence=$this->getDoctrine()->getRepository(Emplacement::class)->findAll();
@@ -94,7 +94,7 @@ class EmplacementBackController extends AbstractController
     }
 
     /**
-     * @Route("/emplacement/updateEmplacement/{id}",name="updateEmp", methods={"GET","POST"})
+     * @Route("/mobile/emplacement/updateEmplacement/{id}",name="updateEmp", methods={"GET","POST"})
      */
     public function update(Request $request,$id,NormalizerInterface  $normalizer)
     {
@@ -112,7 +112,7 @@ class EmplacementBackController extends AbstractController
 
 
     /**
-     * @Route("/supprimerEmp/{id}",name="supprimerEmp")
+     * @Route("/mobile/supprimerEmp/{id}",name="supprimerEmp")
      */
     public function supprimer(Request $request, NormalizerInterface  $normalizer, $id)
 

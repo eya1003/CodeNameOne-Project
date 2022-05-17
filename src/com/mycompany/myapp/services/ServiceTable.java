@@ -132,7 +132,7 @@ public class ServiceTable {
     }*/
 
     public boolean deleteTable(Table fi) {
-        String url = Statics.BASE_URL + "table/supprimer/" + fi.getId_tab();
+        String url = Statics.BASE_URL + "mobile/table/supprimer/" + fi.getId_tab();
                req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -150,8 +150,9 @@ public class ServiceTable {
      public void ajouterReclamation(Table reclamation ){
      
      
-       String url =Statics.BASE_URL+"addReclamationJson/new?nb_chaise_tab=?"+reclamation.getNb_chaise_tab()+"&emp="+null+"&stock_tab="+reclamation.getStock_tab();
-       
+     //  String url =Statics.BASE_URL+"mobile/addTableJSON?nb_chaise_tab=?"+reclamation.getNb_chaise_tab()+"&stock_tab="+reclamation.getStock_tab();
+       String url =Statics.BASE_URL+"mobile/addTable22/new?nb_chaise_tab="+reclamation.getNb_chaise_tab()+
+               "&emp="+101+"&stock_tab="+reclamation.getStock_tab();
        
        req.setUrl(url);
        req.addResponseListener((e)  ->  {

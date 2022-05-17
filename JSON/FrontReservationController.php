@@ -108,7 +108,7 @@ class FrontReservationController extends AbstractController
 
     }
 /**
-* @Route("/addResvJSON", name="Resv")
+* @Route("/mobile/addResvJSON", name="Resv")
  * @Method("POST")
 */
     public function newResv(Request $request,NormalizerInterface  $normalizer)

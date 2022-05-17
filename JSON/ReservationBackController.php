@@ -50,7 +50,7 @@ class ReservationBackController extends AbstractController
         ]);
     }
     /**
-     * @Route ("/AllResv", name="AllResv")
+     * @Route ("/mobile/AllResv", name="AllResv")
      */
     public function AllResv(ReservationRepository $repo,NormalizerInterface $Normalizer)
     {
@@ -209,7 +209,7 @@ class ReservationBackController extends AbstractController
 
 
     /**
-     * @Route("/supprimerResv/{id}",name="supprimerReservation")
+     * @Route("/mobile/supprimerResv/{id}",name="supprimerReservation")
      */
     public function supprimerMobile(Request $request, NormalizerInterface  $normalizer, $id)
 
@@ -225,7 +225,7 @@ class ReservationBackController extends AbstractController
     }
 
     /**
-     * @Route("/reserupdate/{id}",name="updateResv", methods={"GET","POST"})
+     * @Route("/mobile/reserupdate/{id}",name="updateResv", methods={"GET","POST"})
      */
     public function updateJSONMobile(Request $request,$id,NormalizerInterface  $normalizer)
     {

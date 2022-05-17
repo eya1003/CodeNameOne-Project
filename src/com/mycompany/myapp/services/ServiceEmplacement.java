@@ -76,7 +76,7 @@ public class ServiceEmplacement {
  
  
     public ArrayList<Emplacement> getAllEmplacement(){
-        String url = Statics.BASE_URL+"api/afficheEmp";
+        String url = Statics.BASE_URL+"mobile/api/afficheEmp";
         req.setUrl(url);
         req.addResponseListener(new com.codename1.ui.events.ActionListener<NetworkEvent>() {
             @Override
@@ -92,7 +92,7 @@ public class ServiceEmplacement {
 //ajout 
     public void ajoutEmplacement(Emplacement a) {
         
-        String url =Statics.BASE_URL+"addEmpJSON?type_emplacement="+a.getType_emplacement()+"&Description="+a.getDescription(); // aa sorry n3adi getId lyheya mech ta3 user ta3 reclamation
+        String url =Statics.BASE_URL+"mobile/addEmpJSON?type_emplacement="+a.getType_emplacement()+"&Description="+a.getDescription(); // aa sorry n3adi getId lyheya mech ta3 user ta3 reclamation
         
         req.setUrl(url);
         req.addResponseListener((e) -> {
@@ -107,7 +107,7 @@ public class ServiceEmplacement {
     
 
         public boolean editPanier(Emplacement u) {
-        String url = Statics.BASE_URL + "emplacement/updateEmplacement/"+u.getId_emplacement()+
+        String url = Statics.BASE_URL + "mobile/emplacement/updateEmplacement/"+u.getId_emplacement()+
                 "?type_emplacement="+u.getType_emplacement() +"&Description="+u.getDescription();
                req.setUrl(url);
                System.out.println(url);
@@ -123,7 +123,7 @@ public class ServiceEmplacement {
     }
 
     public boolean deletePanier(Emplacement fi) {
-        String url = Statics.BASE_URL + "supprimerEmp/" + fi.getId_emplacement();
+        String url = Statics.BASE_URL + "mobile/supprimerEmp/" + fi.getId_emplacement();
                req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override

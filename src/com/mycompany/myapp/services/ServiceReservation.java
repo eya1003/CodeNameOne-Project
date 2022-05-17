@@ -86,7 +86,7 @@ public class ServiceReservation {
  
  
     public ArrayList<Reservation> getAllTable(){
-        String url = Statics.BASE_URL+"AllResv";
+        String url = Statics.BASE_URL+"mobile/AllResv";
         req.setUrl(url);
         req.addResponseListener(new com.codename1.ui.events.ActionListener<NetworkEvent>() {
             @Override
@@ -100,7 +100,7 @@ public class ServiceReservation {
     }
 
     public boolean deleteReservation(Reservation fi) {
-        String url = Statics.BASE_URL + "supprimerResv/" + fi.getId_resv();
+        String url = Statics.BASE_URL + "mobile/supprimerResv/" + fi.getId_resv();
                req.setUrl(url);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -117,7 +117,7 @@ public class ServiceReservation {
     
     public void ajoutReservation(Reservation a) {
         
-        String url =Statics.BASE_URL+"addResvJSON?phone_resv="+a.getPhone_resv()+"&Email_resv="+a.getEmail_resv(); 
+        String url =Statics.BASE_URL+"mobile/addResvJSON?phone_resv="+a.getPhone_resv()+"&Email_resv="+a.getEmail_resv(); 
         
         req.setUrl(url);
         req.addResponseListener((e) -> {
@@ -131,7 +131,7 @@ public class ServiceReservation {
     }
     
     public boolean editReservation(Reservation u) {
-        String url = Statics.BASE_URL + "reserupdate/"+u.getId_resv()+
+        String url = Statics.BASE_URL + "mobile/reserupdate/"+u.getId_resv()+
                 "?phone_resv="+u.getPhone_resv()+"&Email_resv="+u.getEmail_resv();
                req.setUrl(url);
                System.out.println(url);

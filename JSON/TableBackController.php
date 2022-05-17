@@ -101,7 +101,7 @@ class TableBackController extends AbstractController
     }
 
     /**
-     * @Route("/table/supprimer/{id}",name="supprimerTab")
+     * @Route("/mobile/table/supprimer/{id}",name="supprimerTab")
      */
     public function supprimer(TableRepository $c,$id,EntityManagerInterface $em,NormalizerInterface  $normalizer)
     {
@@ -133,7 +133,7 @@ class TableBackController extends AbstractController
 
 
     /**
-     * @Route("/addTableJSON", name="Table")
+     * @Route("/mobile/addTableJSON", name="Table")
      * @Method ("POST")
      */
     public function newTable(Request $request,NormalizerInterface  $normalizer)
@@ -170,7 +170,7 @@ class TableBackController extends AbstractController
 
     /**
 
-     * @Route("addReclamationJson/new", name="add_reclamation" ,methods = {"GET", "POST"})
+     * @Route("/mobile/addTable22/new", name="add_reclamation" ,methods = {"GET", "POST"})
      */
 
 
